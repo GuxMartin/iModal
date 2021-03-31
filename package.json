@@ -1,5 +1,5 @@
 {
-  "name": "imodal",
+  "name": "@guxmartin/imodal",
   "version": "1.0.0-alpha.1",
   "description": "Dinamic and simple modal generator",
   "main": "src/index.js",
@@ -14,6 +14,7 @@
   ],
   "author": "Gustavo Martín Arriaga <gusma62@gmail.com>",
   "license": "ISC",
+  "homepage": "https://guxmartin.github.io/iModal/examples/",
   "devDependencies": {
     "uglify-js": "^3.13.3"
   },
