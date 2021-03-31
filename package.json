@@ -1,0 +1,23 @@
+{
+  "name": "imodal",
+  "version": "1.0.0-alpha.1",
+  "description": "Dinamic and simple modal generator",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify src/index.js --s iModal -o ./dist/iModal.js",
+    "build-min": "browserify src/index.js --s iModal | uglifyjs -c > ./dist/iModal.min.js"
+  },
+  "keywords": [
+    "bootstrap",
+    "modal"
+  ],
+  "author": "Gustavo Martín Arriaga <gusma62@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "uglify-js": "^3.13.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  }
+}

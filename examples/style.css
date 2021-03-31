@@ -1,0 +1,25 @@
+body{
+  padding: 100px 0;
+}
+#fondo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #006392;
+  background-image: url('https://images.unsplash.com/photo-1510434642308-ae5fec689403?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1963&q=80');
+  background-position: center;
+  background-size: cover;
+  animation-name: bg-zoom;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: -1;
+}
+@keyframes bg-zoom{
+  100% { transform: scale(1.1); }
+}
+.btn{
+  margin-bottom: 4px;
+}
