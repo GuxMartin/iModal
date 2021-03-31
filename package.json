@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuxMartin/iModal.git"
   }
 }
