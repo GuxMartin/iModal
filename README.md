@@ -129,3 +129,11 @@ iModal.setSettings({
 
 ## Documentation and examples
 [https://guxmartin.github.io/iModal/examples/](https://guxmartin.github.io/iModal/examples/)
+
+## Build
+```
+npm i browserify -g
+npm i
+npm run build
+npm run build-min
+```
