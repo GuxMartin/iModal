@@ -128,4 +128,4 @@ iModal.setSettings({
 ```
 
 ## Documentation and examples
-[https://guxmartin.github.io/iModal/examples/index.html](https://guxmartin.github.io/iModal/examples/index.html)
+[https://guxmartin.github.io/iModal/examples/](https://guxmartin.github.io/iModal/examples/)
