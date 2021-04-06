@@ -41,7 +41,7 @@ const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
 
 
-const _VERSION         = '1.0.0-alpha.1';
+const _VERSION         = '4.0.0-alpha.1';
 const _IMODAL_SELECTOR = '.modal.iModal';
 
 
