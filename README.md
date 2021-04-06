@@ -1,4 +1,4 @@
-# iModal :: Boostrap 5
+# iModal :: Boostrap 4
 
 Dinamic and simple modal generator. Ideal for ajax requests.
 
@@ -23,15 +23,6 @@ iModal({size:'sm'});
 iModal({size:''});// Default
 iModal({size:'lg'});
 iModal({size:'xl'});
-
-// Fullscreen
-iModal({fullscreen:true});
-iModal({fullscreen:'sm'});
-iModal({fullscreen:'md'});
-iModal({fullscreen:'lg'});
-iModal({fullscreen:'xl'});
-iModal({fullscreen:'xxl'});
-iModal({fullscreen:false});// Default
 
 // Custom close button text
 iModal({closeText:'Cerrar'});
