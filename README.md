@@ -2,6 +2,8 @@
 
 Dinamic and simple modal generator. Ideal for ajax requests.
 
+> For Bootstrap 4 see branch [**b4**](https://github.com/GuxMartin/iModal/tree/b4)
+
 ## Usage
 ``` javascript
 <script src="iModal.js"></script>
