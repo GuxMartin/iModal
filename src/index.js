@@ -7,22 +7,11 @@ const _IMODAL_SELECTOR = '.modal.iModal';
 
 
 /**
- * https://getbootstrap.com/docs/5.0/components/modal/#getinstance
- * @return Devuelve una instancia Modal de bootstrap o false
- */
-const getModalInstance = function(){
-  let el_iModal = document.querySelector(_IMODAL_SELECTOR);
-  if(! el_iModal) return false;
-  return bootstrap.Modal.getInstance(el_iModal);
-}
-
-
-/**
  * Indica si hay un iModal activo
  * @return boolean
  */
 const isActive = function(){
-  return !! getModalInstance();
+  return !! document.querySelector(_IMODAL_SELECTOR);
 }
 
 
@@ -31,12 +20,10 @@ const isActive = function(){
  */
 const dispose = function(){
   let el_iModal = document.querySelector(_IMODAL_SELECTOR);
-  let iModalInstance = getModalInstance();
-  if(! iModalInstance) return;
-  iModalInstance.dispose();
-
   if(el_iModal){
-    el_iModal.parentNode.removeChild(el_iModal);
+    $(_IMODAL_SELECTOR).modal('dispose').remove();
+    $('.modal-backdrop').remove();
+    $('body').removeClass("modal-open");
   }
 }
 
@@ -46,7 +33,7 @@ const dispose = function(){
  */
 const hide = function(){
   if(! isActive()) return;
-  getModalInstance().hide();
+  $(_IMODAL_SELECTOR).modal('hide');
 }
 
 
@@ -81,9 +68,6 @@ const iModal = function (params) {
   if(settings.size){
     modal_dialog.classList.add(settings.size);
   }
-  if(settings.fullscreen){
-    modal_dialog.classList.add(settings.fullscreen);
-  }
   if(settings.dialogScrollable){
     modal_dialog.classList.add("modal-dialog-scrollable");
   }
@@ -109,7 +93,9 @@ const iModal = function (params) {
     }
     modal_header.innerHTML = `
       <h5 class="modal-title">${settings.title}</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     `;
     modal_content.appendChild(modal_header);
   }
@@ -129,7 +115,7 @@ const iModal = function (params) {
       close_btn_class = `btn btn-outline-${bgColors[settings.footerClass].btn}`;
     }
     modal_footer.innerHTML = `
-      <button type="button" class="btn ${close_btn_class}" data-bs-dismiss="modal">${settings.closeText}</button>
+      <button type="button" class="btn ${close_btn_class}" data-dismiss="modal">${settings.closeText}</button>
     `;
     modal_content.appendChild(modal_footer);
   }
@@ -140,34 +126,31 @@ const iModal = function (params) {
   let el_iModal = document.querySelector(_IMODAL_SELECTOR);
 
   // Declarar events antes de mostrar
-  el_iModal.addEventListener('show.bs.modal', function (event) {
+  $(_IMODAL_SELECTOR).on('show.bs.modal', function (event) {
     settings.onShow();
   });
-  el_iModal.addEventListener('shown.bs.modal', function (event) {
+  $(_IMODAL_SELECTOR).on('shown.bs.modal', function (event) {
     settings.onShowed();
     if(settings.autoHide){
       setTimeout(hide, settings.autoHideTime);
     }
   });
-  el_iModal.addEventListener('hide.bs.modal', function (event) {
+  $(_IMODAL_SELECTOR).on('hide.bs.modal', function (event) {
     settings.onHide();
   });
-  el_iModal.addEventListener('hidden.bs.modal', function (event) {
+  $(_IMODAL_SELECTOR).on('hidden.bs.modal', function (event) {
     settings.onHidden();
     dispose();
   });
-  el_iModal.addEventListener('hidePrevented.bs.modal', function (event) {
+  $(_IMODAL_SELECTOR).on('hidePrevented.bs.modal', function (event) {
     settings.onHidePrevented();
   });
 
-
-  // Generar modal, instanciar y mostrar
-  iModalInstance = new bootstrap.Modal(el_iModal, {
+  // Generar modal
+  $(_IMODAL_SELECTOR).modal({
     backdrop: settings.backdrop,
     keyboard: settings.keyboard,
   });
-
-  iModalInstance.show();
 
   // Backdrop Color
   if(settings.backdropColor){

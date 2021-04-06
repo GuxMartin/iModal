@@ -4,13 +4,12 @@ const bgColors = require('./bgColors');
 let defaultSettings = {
   id: "iModal",
   size: "",
-  fullscreen: false,
   title: "",
   closeText: "Close",
   body: `
     <div class="d-flex justify-content-center" style="height: 100%;">
       <div class="spinner-border text-primary my-auto" role="status">
-        <span class="visually-hidden">Loading...</span>
+        <span class="sr-only">Loading...</span>
       </div>
     </div>
   `,
@@ -46,16 +45,6 @@ const validate = function(settings){
   if(['sm','lg','xl'].indexOf(settings.size) < 0){ settings.size = defaultSettings.size; }
   else{ settings.size = 'modal-'+settings.size; }
 
-  if([false,true,'sm','md','lg','xl','xxl'].indexOf(settings.fullscreen) < 0){ settings.fullscreen = defaultSettings.fullscreen; }
-  else{
-    if(settings.fullscreen !== false){
-      if(settings.fullscreen === true){ settings.fullscreen = 'modal-fullscreen'; }
-      else {
-        settings.fullscreen = `modal-fullscreen-${settings.fullscreen}-down`;
-      }
-    }
-  }
-
   if(! (settings.bg in bgColors)){ settings.bg = defaultSettings.bg; }
 
   if(! (settings.headerClass in bgColors)){ settings.headerClass = defaultSettings.headerClass; }
@@ -77,7 +66,7 @@ const validate = function(settings){
   if([true,false].indexOf(settings.autoHide) < 0){ settings.autoHide = defaultSettings.autoHide; }
 
   settings.autoHideTime = parseInt(settings.autoHideTime) || defaultSettings.autoHideTime;
-  
+
   return settings;
 }// /validate
 
