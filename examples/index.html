@@ -730,6 +730,22 @@ iModal({
 
     <h2 class="text-light my-5">Another examples</h2>
 
+    <h3 class="text-light">Fetch call</h3>
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+        <pre class="bg-dark text-light p-3">// HTML
+&lt;button type="button" onclick="myFunction();"&gt;Button&lt;/button&gt;
+
+// JavaScript
+function myFunction(){
+  iModal({title:'My title'});
+  fetch(`/url/to`)
+    .then(res => res.text())
+    .then(res => iModal.body(res));
+}</pre>
+</div><!-- /.col -->
+    </div><!-- /.row -->
+
     <h3 class="text-light">JQuery AJAX</h3>
     <div class="row justify-content-center">
       <div class="col-sm-8">
