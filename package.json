@@ -1,6 +1,6 @@
 {
   "name": "@guxmartin/imodal",
-  "version": "5.0.0-alpha.2",
+  "version": "5.0.0-alpha.3",
   "description": "Dinamic and simple modal generator",
   "main": "src/index.js",
   "scripts": {
