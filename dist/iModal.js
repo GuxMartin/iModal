@@ -37,6 +37,7 @@ const extend = function(out) {
 module.exports = extend;
 
 },{}],3:[function(require,module,exports){
+const bootstrap = require('bootstrap');
 const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
 
@@ -230,7 +231,7 @@ module.exports.body        = function(body) {
   el_iModal.querySelector('.modal-body').innerHTML = body
 };
 
-},{"./bgColors":1,"./settings":4}],4:[function(require,module,exports){
+},{"./bgColors":1,"./settings":4,"bootstrap":"bootstrap"}],4:[function(require,module,exports){
 const extend = require('./extend');
 const bgColors = require('./bgColors');
 

@@ -1,3 +1,4 @@
+const bootstrap = require('bootstrap');
 const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
 
