@@ -2,8 +2,7 @@ const bootstrap = window.bootstrap || require('bootstrap');
 const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
 
-
-const _VERSION         = '5.0.0-alpha.2';
+const _VERSION         = '5.0.0-alpha.3';
 const _IMODAL_SELECTOR = '.modal.iModal';
 
 
