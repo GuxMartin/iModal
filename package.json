@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify src/index.js --s iModal -o ./dist/iModal.js",
-    "build-min": "browserify src/index.js --s iModal | uglifyjs -c > ./dist/iModal.min.js"
+    "build": "browserify -x bootstrap src/index.js --s iModal -o ./dist/iModal.js",
+    "build-min": "browserify -x bootstrap src/index.js --s iModal | uglifyjs -c > ./dist/iModal.min.js"
   },
   "keywords": [
     "bootstrap",
