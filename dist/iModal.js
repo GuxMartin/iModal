@@ -37,10 +37,9 @@ const extend = function(out) {
 module.exports = extend;
 
 },{}],3:[function(require,module,exports){
-const bootstrap = require('bootstrap');
+const bootstrap = window.bootstrap || require('bootstrap');
 const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
-
 
 const _VERSION         = '5.0.0-alpha.2';
 const _IMODAL_SELECTOR = '.modal.iModal';

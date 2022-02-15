@@ -1,4 +1,4 @@
-const bootstrap = require('bootstrap');
+const bootstrap = window.bootstrap || require('bootstrap');
 const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
 
