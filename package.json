@@ -16,9 +16,7 @@
   "license": "ISC",
   "homepage": "https://guxmartin.github.io/iModal/examples/",
   "devDependencies": {
-    "uglify-js": "^3.13.3"
-  },
-  "dependencies": {
+    "uglify-js": "^3.13.3",
     "bootstrap": "^5"
   },
   "repository": {
