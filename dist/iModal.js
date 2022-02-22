@@ -107,6 +107,9 @@ const remove = function(){
 const iModal = function (params) {
   let settings = combinedSettings(params);
 
+  // Por si existiera un modal abierto
+  dispose();
+
   let modal = document.createElement('div');
   modal.id = settings.id;
   modal.tabIndex = -1;

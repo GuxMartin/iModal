@@ -2,7 +2,7 @@ const bootstrap = window.bootstrap || require('bootstrap');
 const {setGlobalsSettings, combinedSettings} = require('./settings');
 const bgColors = require('./bgColors');
 
-const _VERSION         = '5.0.0-alpha.3';
+const _VERSION         = '5.0.0-alpha.4';
 const _IMODAL_SELECTOR = '.modal.iModal';
 
 
@@ -67,6 +67,9 @@ const remove = function(){
  */
 const iModal = function (params) {
   let settings = combinedSettings(params);
+
+  // Por si existiera un modal abierto
+  dispose();
 
   let modal = document.createElement('div');
   modal.id = settings.id;
