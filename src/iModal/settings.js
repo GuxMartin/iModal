@@ -1,5 +1,5 @@
-const extend = require('./extend');
-const bgColors = require('./bgColors');
+import {extend} from './extend.js';
+import bgColors from './bgColors';
 
 let defaultSettings = {
   id: "iModal",
@@ -55,7 +55,7 @@ const validate = function(settings){
       }
     }
   }
-
+  // console.log(bgColors);
   if(! (settings.bg in bgColors)){ settings.bg = defaultSettings.bg; }
 
   if(! (settings.headerClass in bgColors)){ settings.headerClass = defaultSettings.headerClass; }
@@ -74,21 +74,23 @@ const validate = function(settings){
 
   if([true,false].indexOf(settings.fade) < 0){ settings.fade = defaultSettings.fade; }
 
-  if([true,false].indexOf(settings.autoHide) < 0){ settings.autoHide = defaultSettings.autoHide; }
-
-  settings.autoHideTime = parseInt(settings.autoHideTime) || defaultSettings.autoHideTime;
+  if(Number.isInteger(settings.autoHide) && settings.autoHide > 0){
+    settings.autoHideTime = parseInt(settings.autoHide);
+    settings.autoHide = true;
+  }
+  else if(settings.autoHide){
+    settings.autoHide = true;
+  }
   
   return settings;
 }// /validate
 
 
-module.exports = {
-  setGlobalsSettings: (params) => {
-    iModalSettings = params;
-  },
-  combinedSettings: (params) => {
-    let settings = extend({}, defaultSettings, iModalSettings, params);
-    return validate(settings);
-  },
-  // bgColors: bgColors,
-};
+export function setGlobalsSettings(params){
+  iModalSettings = params;
+}
+
+export function combinedSettings(params){
+  let settings = extend({}, defaultSettings, iModalSettings, params);
+  return validate(settings);
+}

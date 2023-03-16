@@ -1,13 +1,8 @@
 {
   "name": "@guxmartin/imodal",
-  "version": "5.0.0-alpha.4",
-  "description": "Dinamic and simple modal generator",
+  "version": "5.0.0-beta.1",
+  "description": "Dinamic and simple bootstrap modal generator",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -x bootstrap src/index.js --s iModal -o ./dist/iModal.js",
-    "build-min": "browserify -x bootstrap src/index.js --s iModal | uglifyjs -c > ./dist/iModal.min.js"
-  },
   "keywords": [
     "bootstrap",
     "modal"
@@ -15,12 +10,20 @@
   "author": "Gustavo Martín Arriaga <gusma62@gmail.com>",
   "license": "ISC",
   "homepage": "https://guxmartin.github.io/iModal/examples/",
-  "devDependencies": {
-    "uglify-js": "^3.13.3",
-    "bootstrap": "^5"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/GuxMartin/iModal.git"
+  },
+  "scripts": {
+    "start": "vite --host",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3"
+  },
+  "devDependencies": {
+    "sass": "^1.59.3",
+    "vite": "^4.1.4"
   }
 }

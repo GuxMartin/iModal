@@ -1,7 +1,7 @@
 /**
  * http://youmightnotneedjquery.com/#extend
  */
-const extend = function(out) {
+export const extend = function(out) {
  out = out || {};
 
  for (var i = 1; i < arguments.length; i++) {
@@ -16,6 +16,3 @@ const extend = function(out) {
 
  return out;
 };
-
-
-module.exports = extend;

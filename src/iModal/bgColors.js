@@ -1,7 +1,7 @@
 /**
  * Objeto de clases de colores de fondo de bootstrap
  */
-module.exports = {
+export default {
   success:   { color: 'text-white', btn: 'light', },
   primary:   { color: 'text-white', btn: 'light', },
   info:      { color: 'text-white', btn: 'light', },
