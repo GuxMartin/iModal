@@ -6,114 +6,115 @@ Dinamic and simple modal generator. Ideal for ajax requests.
 
 ## Usage
 ``` javascript
-<script src="iModal.js"></script>
+import iModal from 'iModal';
+window.iModal = iModal;
 
 // Normal
-iModal();
+new iModal();
 
 // Update html body
-iModal.body(('Custom html');
+iModal.body('Custom html');
 
 // Custim id
-iModal({id:'my_modal'});
+new iModal({id:'my_modal'});
 
 // Custom tite
-iModal({title:'Hello world'});
+new iModal({title:'Hello world'});
 
 // Sizes
-iModal({size:'sm'});
-iModal({size:''});// Default
-iModal({size:'lg'});
-iModal({size:'xl'});
+new iModal({size:'sm'});
+new iModal({size:''});// Default
+new iModal({size:'lg'});
+new iModal({size:'xl'});
 
 // Fullscreen
-iModal({fullscreen:true});
-iModal({fullscreen:'sm'});
-iModal({fullscreen:'md'});
-iModal({fullscreen:'lg'});
-iModal({fullscreen:'xl'});
-iModal({fullscreen:'xxl'});
-iModal({fullscreen:false});// Default
+new iModal({fullscreen:true});
+new iModal({fullscreen:'sm'});
+new iModal({fullscreen:'md'});
+new iModal({fullscreen:'lg'});
+new iModal({fullscreen:'xl'});
+new iModal({fullscreen:'xxl'});
+new iModal({fullscreen:false});// Default
 
 // Custom close button text
-iModal({closeText:'Cerrar'});
+new iModal({closeText:'Cerrar'});
 
 // Custom default body
-iModal({body:'Loading'});
+new iModal({body:'Loading'});
 
 // Background Class
-iModal({bg:'success'});
-iModal({bg:'primary'});
-iModal({bg:'info'});
-iModal({bg:'warning'});
-iModal({bg:'danger'});
-iModal({bg:'secondary'});
-iModal({bg:'dark'});
-iModal({bg:'light'});
+new iModal({bg:'success'});
+new iModal({bg:'primary'});
+new iModal({bg:'info'});
+new iModal({bg:'warning'});
+new iModal({bg:'danger'});
+new iModal({bg:'secondary'});
+new iModal({bg:'dark'});
+new iModal({bg:'light'});
 
 // Header Class
-iModal({headerClass:'success'});
-iModal({headerClass:'primary'});
-iModal({headerClass:'info'});
-iModal({headerClass:'warning'});
-iModal({headerClass:'danger'});
-iModal({headerClass:'secondary'});
-iModal({headerClass:'dark'});
-iModal({headerClass:'light'});
+new iModal({headerClass:'success'});
+new iModal({headerClass:'primary'});
+new iModal({headerClass:'info'});
+new iModal({headerClass:'warning'});
+new iModal({headerClass:'danger'});
+new iModal({headerClass:'secondary'});
+new iModal({headerClass:'dark'});
+new iModal({headerClass:'light'});
 
 // Footer Class
-iModal({footerClass:'success'});
-iModal({footerClass:'primary'});
-iModal({footerClass:'info'});
-iModal({footerClass:'warning'});
-iModal({footerClass:'danger'});
-iModal({footerClass:'secondary'});
-iModal({footerClass:'dark'});
-iModal({footerClass:'light'});
+new iModal({footerClass:'success'});
+new iModal({footerClass:'primary'});
+new iModal({footerClass:'info'});
+new iModal({footerClass:'warning'});
+new iModal({footerClass:'danger'});
+new iModal({footerClass:'secondary'});
+new iModal({footerClass:'dark'});
+new iModal({footerClass:'light'});
 
 // Show/hide header
-iModal({header:false});
+new iModal({header:false});
 
 // Show/hide footer
-iModal({footer:false});
+new iModal({footer:false});
 
 // Backdrop
-iModal({backdrop:false});
+new iModal({backdrop:false});
 
 // Backdrop color
-iModal({backdropColor:false});
-iModal({backdropColor:'success'});
-iModal({backdropColor:'primary'});
-iModal({backdropColor:'info'});
-iModal({backdropColor:'warning'});
-iModal({backdropColor:'danger'});
-iModal({backdropColor:'secondary'});
-iModal({backdropColor:'dark'});
-iModal({backdropColor:'light'});
+new iModal({backdropColor:false});
+new iModal({backdropColor:'success'});
+new iModal({backdropColor:'primary'});
+new iModal({backdropColor:'info'});
+new iModal({backdropColor:'warning'});
+new iModal({backdropColor:'danger'});
+new iModal({backdropColor:'secondary'});
+new iModal({backdropColor:'dark'});
+new iModal({backdropColor:'light'});
 
 // Keyboard
-iModal({keyboard:false});
+new iModal({keyboard:false});
 
 // Dialog scrollable
-iModal({dialogScrollable:true});
+new iModal({dialogScrollable:true});
 
 // Vertically centered
-iModal({dialogCentered:true});
+new iModal({dialogCentered:true});
 
 // Fade animation
-iModal({fade:false});
+new iModal({fade:false});
 
 // Auto Hide
-iModal({autoHide:true});
-iModal({autoHide:false});// Default
-iModal({autoHide:3000});
+new iModal({autoHide:true});
+new iModal({autoHide:false});// Default
+new iModal({autoHide:3000});
 
 // Events
-iModal({ onShow: function(){ alert('Show'); } });
-iModal({ onShowed: function(){ alert('Showed'); } });
-iModal({ onHide: function(){ alert('Hide'); } });
-iModal({ onHidden: function(){ alert('Hidden'); } });
-iModal({ backdrop: 'static', onHidePrevented: function(){ alert('Hide Prevented'); } });
+new iModal({ onShow: function(){ alert('Show'); } });
+new iModal({ onShowed: function(){ alert('Showed'); } });
+new iModal({ onHide: function(){ alert('Hide'); } });
+new iModal({ onHidden: function(){ alert('Hidden'); } });
+new iModal({ backdrop: 'static', onHidePrevented: function(){ alert('Hide Prevented'); } });
 
 // Methods
 iModal.isActive(); // return Boolean
@@ -134,8 +135,6 @@ iModal.setSettings({
 
 ## Build
 ```
-npm i browserify -g
-npm i
-npm run build
-npm run build-min
+npm i --dev
+npm start
 ```
