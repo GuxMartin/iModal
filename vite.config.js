@@ -1,6 +1,7 @@
 const path = require('path')
+import { defineConfig } from 'vite'
 
-export default {
+export default defineConfig({
   root: path.resolve(__dirname, 'src'),
   resolve: {
     alias: {
@@ -10,5 +11,20 @@ export default {
   server: {
     port: 8080,
     hot: true
+  },
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/iModal/iModal.js'),
+      name: 'iModal',
+      fileName: 'iModal',
+    },
+    rollupOptions: {
+      external: ['bootstrap'],
+      output: {
+        globals: {
+          bootstrap: 'bootstrap',
+        },
+      }
+    }
   }
-}
+})
