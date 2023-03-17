@@ -13,8 +13,9 @@ export default defineConfig({
     hot: true
   },
   build: {
+    outDir: '../dist',
     lib: {
-      entry: path.resolve(__dirname, 'src/iModal/iModal.js'),
+      entry: path.resolve(__dirname, 'src/iModal.js'),
       name: 'iModal',
       fileName: 'iModal',
     },

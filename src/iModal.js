@@ -1,6 +1,6 @@
 import * as bootstrap from 'bootstrap';
-import {combinedSettings, setGlobalsSettings} from './settings';
-import bgColors from './bgColors';
+import {combinedSettings, setGlobalsSettings} from './helpers/settings';
+import bgColors from './helpers/bgColors';
 
 const _VERSION         = '5.0.0-beta.1';
 const _IMODAL_SELECTOR = '.modal.iModal';
