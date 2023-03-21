@@ -66,7 +66,7 @@ function S(e) {
   let t = y({}, o, p, e);
   return L(t);
 }
-const H = "5.0.0-beta.1", b = ".modal.iModal", d = class {
+const H = "5.0.0-beta.2", b = ".modal.iModal", d = class {
   constructor(t) {
     l(this, "settings");
     this.settings = S(t), d.dispose();
