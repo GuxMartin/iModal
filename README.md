@@ -6,8 +6,11 @@ Dinamic and simple modal generator. Ideal for ajax requests.
 
 ## Usage
 ``` javascript
-import iModal from 'iModal';
+import iModal from '@guxmartin/imodal';
 window.iModal = iModal;
+
+// or...
+<script src="iModal/dist/iModal.umd.js"></script>
 
 // Normal
 new iModal();
