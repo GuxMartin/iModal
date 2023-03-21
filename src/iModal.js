@@ -2,7 +2,7 @@ import * as bootstrap from 'bootstrap';
 import {combinedSettings, setGlobalsSettings} from './helpers/settings';
 import bgColors from './helpers/bgColors';
 
-const _VERSION         = '5.0.0-beta.3';
+const _VERSION         = '5.0.0-beta.4';
 const _IMODAL_SELECTOR = '.modal.iModal';
 
 export default class iModal {
@@ -134,10 +134,13 @@ export default class iModal {
     let iModalInstance = iModal.getModalInstance();
     if(! iModalInstance) return;
     iModalInstance.dispose();
-
+    
     if(el_iModal){
       el_iModal.parentNode.removeChild(el_iModal);
     }
+
+    document.querySelector('body').style.overflow     = '';
+    document.querySelector('body').style.paddingRight = '';
   }// /dispose
 
 
@@ -185,8 +188,6 @@ export default class iModal {
    */
   static remove = function(){
     if(! iModal.isActive()) return;
-    document.querySelector(_IMODAL_SELECTOR).classList.remove("fade");
-    iModal.hide();
     iModal.dispose();
   }
 
