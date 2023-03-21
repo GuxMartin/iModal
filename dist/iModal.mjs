@@ -1,13 +1,13 @@
-var C = Object.defineProperty;
-var v = (e, t, s) => t in e ? C(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : e[t] = s;
-var l = (e, t, s) => (v(e, typeof t != "symbol" ? t + "" : t, s), s);
+var y = Object.defineProperty;
+var C = (e, t, o) => t in e ? y(e, t, { enumerable: !0, configurable: !0, writable: !0, value: o }) : e[t] = o;
+var l = (e, t, o) => (C(e, typeof t != "symbol" ? t + "" : t, o), o);
 import * as g from "bootstrap";
-const y = function(e) {
+const v = function(e) {
   e = e || {};
   for (var t = 1; t < arguments.length; t++)
     if (arguments[t])
-      for (var s in arguments[t])
-        arguments[t].hasOwnProperty(s) && (e[s] = arguments[t][s]);
+      for (var o in arguments[t])
+        arguments[t].hasOwnProperty(o) && (e[o] = arguments[t][o]);
   return e;
 }, n = {
   success: { color: "text-white", btn: "light" },
@@ -19,7 +19,7 @@ const y = function(e) {
   dark: { color: "text-white", btn: "light" },
   light: { color: "text-dark", btn: "dark" }
 };
-let o = {
+let i = {
   id: "iModal",
   size: "",
   fullscreen: !1,
@@ -57,53 +57,53 @@ let o = {
   }
 }, p = {};
 const L = function(e) {
-  return e.id.length < 1 && (e.id = o.id), ["sm", "lg", "xl"].indexOf(e.size) < 0 ? e.size = o.size : e.size = "modal-" + e.size, [!1, !0, "sm", "md", "lg", "xl", "xxl"].indexOf(e.fullscreen) < 0 ? e.fullscreen = o.fullscreen : e.fullscreen !== !1 && (e.fullscreen === !0 ? e.fullscreen = "modal-fullscreen" : e.fullscreen = `modal-fullscreen-${e.fullscreen}-down`), e.bg in n || (e.bg = o.bg), e.headerClass in n || (e.headerClass = o.headerClass), e.footerClass in n || (e.footerClass = o.footerClass), [!0, !1, "static"].indexOf(e.backdrop) < 0 && (e.backdrop = o.backdrop), e.backdropColor in n || (e.backdropColor = o.backdropColor), [!0, !1].indexOf(e.keyboard) < 0 && (e.keyboard = o.keyboard), [!0, !1].indexOf(e.dialogScrollable) < 0 && (e.dialogScrollable = o.dialogScrollable), [!0, !1].indexOf(e.dialogCentered) < 0 && (e.dialogCentered = o.dialogCentered), [!0, !1].indexOf(e.fade) < 0 && (e.fade = o.fade), Number.isInteger(e.autoHide) && e.autoHide > 0 ? (e.autoHideTime = parseInt(e.autoHide), e.autoHide = !0) : e.autoHide && (e.autoHide = !0), e;
+  return e.id.length < 1 && (e.id = i.id), ["sm", "lg", "xl"].indexOf(e.size) < 0 ? e.size = i.size : e.size = "modal-" + e.size, [!1, !0, "sm", "md", "lg", "xl", "xxl"].indexOf(e.fullscreen) < 0 ? e.fullscreen = i.fullscreen : e.fullscreen !== !1 && (e.fullscreen === !0 ? e.fullscreen = "modal-fullscreen" : e.fullscreen = `modal-fullscreen-${e.fullscreen}-down`), e.bg in n || (e.bg = i.bg), e.headerClass in n || (e.headerClass = i.headerClass), e.footerClass in n || (e.footerClass = i.footerClass), [!0, !1, "static"].indexOf(e.backdrop) < 0 && (e.backdrop = i.backdrop), e.backdropColor in n || (e.backdropColor = i.backdropColor), [!0, !1].indexOf(e.keyboard) < 0 && (e.keyboard = i.keyboard), [!0, !1].indexOf(e.dialogScrollable) < 0 && (e.dialogScrollable = i.dialogScrollable), [!0, !1].indexOf(e.dialogCentered) < 0 && (e.dialogCentered = i.dialogCentered), [!0, !1].indexOf(e.fade) < 0 && (e.fade = i.fade), Number.isInteger(e.autoHide) && e.autoHide > 0 ? (e.autoHideTime = parseInt(e.autoHide), e.autoHide = !0) : e.autoHide && (e.autoHide = !0), e;
 };
 function x(e) {
   p = e;
 }
 function S(e) {
-  let t = y({}, o, p, e);
+  let t = v({}, i, p, e);
   return L(t);
 }
-const H = "5.0.0-beta.3", b = ".modal.iModal", d = class {
+const H = "5.0.0-beta.4", b = ".modal.iModal", d = class {
   constructor(t) {
     l(this, "settings");
     this.settings = S(t), d.dispose();
-    let s = document.createElement("div");
-    s.id = this.settings.id, s.tabIndex = -1, s.classList.add("modal", "iModal"), this.settings.fade && s.classList.add("fade");
+    let o = document.createElement("div");
+    o.id = this.settings.id, o.tabIndex = -1, o.classList.add("modal", "iModal"), this.settings.fade && o.classList.add("fade");
     let r = document.createElement("div");
-    r.classList.add("modal-dialog"), this.settings.size && r.classList.add(this.settings.size), this.settings.fullscreen && r.classList.add(this.settings.fullscreen), this.settings.dialogScrollable && r.classList.add("modal-dialog-scrollable"), this.settings.dialogCentered && r.classList.add("modal-dialog-centered"), s.appendChild(r);
+    r.classList.add("modal-dialog"), this.settings.size && r.classList.add(this.settings.size), this.settings.fullscreen && r.classList.add(this.settings.fullscreen), this.settings.dialogScrollable && r.classList.add("modal-dialog-scrollable"), this.settings.dialogCentered && r.classList.add("modal-dialog-centered"), o.appendChild(r);
     let c = document.createElement("div");
     if (c.classList.add("modal-content"), this.settings.bg && (c.classList.add(`bg-${this.settings.bg}`), c.classList.add(n[this.settings.bg].color)), r.appendChild(c), this.settings.header) {
-      let i = document.createElement("div");
-      i.classList.add("modal-header"), this.settings.headerClass && (i.classList.add(`bg-${this.settings.headerClass}`), i.classList.add(n[this.settings.headerClass].color)), i.innerHTML = `
+      let s = document.createElement("div");
+      s.classList.add("modal-header"), this.settings.headerClass && (s.classList.add(`bg-${this.settings.headerClass}`), s.classList.add(n[this.settings.headerClass].color)), s.innerHTML = `
       <h5 class="modal-title">${this.settings.title}</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    `, c.appendChild(i);
+    `, c.appendChild(s);
     }
     let h = document.createElement("div");
     if (h.classList.add("modal-body"), h.innerHTML = this.settings.body, c.appendChild(h), this.settings.footer) {
-      let i = document.createElement("div");
-      i.classList.add("modal-footer");
+      let s = document.createElement("div");
+      s.classList.add("modal-footer");
       let m = "btn btn-outline-secondary";
-      this.settings.bg && (m = `btn btn-outline-${n[this.settings.bg].btn}`), this.settings.footerClass && (i.classList.add(`bg-${this.settings.footerClass}`), m = `btn btn-outline-${n[this.settings.footerClass].btn}`), i.innerHTML = `
+      this.settings.bg && (m = `btn btn-outline-${n[this.settings.bg].btn}`), this.settings.footerClass && (s.classList.add(`bg-${this.settings.footerClass}`), m = `btn btn-outline-${n[this.settings.footerClass].btn}`), s.innerHTML = `
       <button type="button" class="btn ${m}" data-bs-dismiss="modal">${this.settings.closeText}</button>
-    `, c.appendChild(i);
+    `, c.appendChild(s);
     }
-    document.querySelector("body").appendChild(s);
+    document.querySelector("body").appendChild(o);
     let u = document.querySelector(b), f = this;
-    u.addEventListener("show.bs.modal", function(i) {
+    u.addEventListener("show.bs.modal", function(s) {
       f.settings.onShow();
-    }), u.addEventListener("shown.bs.modal", function(i) {
+    }), u.addEventListener("shown.bs.modal", function(s) {
       f.settings.onShowed(), f.settings.autoHide && setTimeout(() => {
         d.hide();
       }, f.settings.autoHideTime);
-    }), u.addEventListener("hide.bs.modal", function(i) {
+    }), u.addEventListener("hide.bs.modal", function(s) {
       f.settings.onHide();
-    }), u.addEventListener("hidden.bs.modal", function(i) {
+    }), u.addEventListener("hidden.bs.modal", function(s) {
       f.settings.onHidden(), d.dispose();
-    }), u.addEventListener("hidePrevented.bs.modal", function(i) {
+    }), u.addEventListener("hidePrevented.bs.modal", function(s) {
       f.settings.onHidePrevented();
     }), new g.Modal(u, {
       backdrop: this.settings.backdrop,
@@ -115,8 +115,8 @@ const H = "5.0.0-beta.3", b = ".modal.iModal", d = class {
    * Modifica el cuerpo de un iModal
    */
   static body(t) {
-    let s = document.querySelector(b);
-    s && (s.querySelector(".modal-body").innerHTML = t);
+    let o = document.querySelector(b);
+    o && (o.querySelector(".modal-body").innerHTML = t);
   }
 };
 let a = d;
@@ -125,8 +125,8 @@ l(a, "version", H), /**
  * Remueve completamente un iModal
  */
 l(a, "dispose", function() {
-  let t = document.querySelector(b), s = d.getModalInstance();
-  s && (s.dispose(), t && t.parentNode.removeChild(t));
+  let t = document.querySelector(b), o = d.getModalInstance();
+  o && (o.dispose(), t && t.parentNode.removeChild(t), document.querySelector("body").style.overflow = "", document.querySelector("body").style.paddingRight = "");
 }), /**
  * Saber si hay activo un iModal
  * @return boolean
@@ -150,7 +150,7 @@ l(a, "hide", function() {
  * Oculta un iModal sin efecto fade
  */
 l(a, "remove", function() {
-  d.isActive() && (document.querySelector(b).classList.remove("fade"), d.hide(), d.dispose());
+  d.isActive() && d.dispose();
 }), /**
  * Establece los parámetros globales
  */
