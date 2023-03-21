@@ -1,8 +1,8 @@
 {
   "name": "@guxmartin/imodal",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0-beta.2",
   "description": "Dinamic and simple bootstrap modal generator",
-  "main": "src/index.js",
+  "main": "src/iModal.js",
   "keywords": [
     "bootstrap",
     "modal"
